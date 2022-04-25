@@ -9,17 +9,17 @@ import hello.core.member.MemoryMemberRepository;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
 
-// ¾ÖÇÃ¸®ÄÉÀÌ¼Ç ÀüÃ¼¸¦ ¼³Á¤ÇÏ°í ±¸¼ºÇÔ
-// ÀÎÅÍÆäÀÌ½ºÀÇ ±¸ÇöÃ¼¸¦ ¼³Á¤
+// ì• í”Œë¦¬ì¼€ì´ì…˜ ì „ì²´ë¥¼ ì„¤ì •í•˜ê³  êµ¬ì„±í•¨
+// ì¸í„°í˜ì´ìŠ¤ì˜ êµ¬í˜„ì²´ë¥¼ ì„¤ì •
 public class AppConfig {
 	
-	private MemberRepository memberRepository() {
+	public MemberRepository memberRepository() {
 		return new MemoryMemberRepository();
 	}
 	
 	public MemberService memberService() {
 		return new MemberServiceImpl(memberRepository()); 
-		// new °¡  ¹Ø¿¡ Áßº¹ÀÌ¶ó ¾ø¾Ú
+		// new ê°€  ë°‘ì— ì¤‘ë³µì´ë¼ ì—†ì•°
 		//return new MemberServiceImpl(new MemoryMemberRepository());
 	}
 	
@@ -31,7 +31,7 @@ public class AppConfig {
 	public DiscountPolicy discountPolicy() {
 		return new RateDiscountPolicy();
 		//return new FixDiscountPolicy(); 
-		//°íÁ¤ÇÒÀÎ
+		//ê³ ì •í• ì¸
 		
 	}
 	
